@@ -117,8 +117,8 @@
   });
 
   // every framed photograph drifts against the scroll
-  document.querySelectorAll('.frame img,.bleed img,.journey__fig img').forEach(function (im) {
-    if (!im.hasAttribute('data-px')) im.setAttribute('data-px', '9');
+  document.querySelectorAll('.frame img,.journey__fig img').forEach(function (im) {
+    if (!im.hasAttribute('data-px')) im.setAttribute('data-px', '3');
   });
 
   /* -------------------------------------------------------- reveal on view */
@@ -127,7 +127,22 @@
       if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
     });
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-  document.querySelectorAll('.rise,.clip,.sym-list,.path,.marker,.stats').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.rise,.sym-list,.path,.marker,.stats').forEach(function (el) { io.observe(el); });
+  // safety net: nothing may ever stay invisible, whatever the observer does
+  setTimeout(function () {
+    document.querySelectorAll('.rise:not(.is-in)').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < innerHeight * 1.2) el.classList.add('is-in');
+    });
+  }, 2500);
+  addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('.rise:not(.is-in)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < innerHeight) el.classList.add('is-in');
+      });
+    }, 400);
+  });
 
   /* --------------------------------------------------- word-by-word reveal */
   var says = document.querySelectorAll('.say');
@@ -234,9 +249,9 @@
     pxs.forEach(function (el) {
       var r = el.getBoundingClientRect();
       if (r.bottom < -200 || r.top > innerHeight + 200) return;
-      var amt = parseFloat(el.getAttribute('data-px')) || 12;
+      var amt = (parseFloat(el.getAttribute('data-px')) || 6) * 0.4;
       var p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
-      el.style.transform = 'translate3d(0,' + (-p * amt) + '%,0) scale(1.12)';
+      el.style.transform = 'translate3d(0,' + (-p * amt).toFixed(2) + '%,0) scale(1.06)';
     });
   }
 

@@ -100,7 +100,7 @@
       <p class="marker">One continuous passage</p>
       <p class="say" data-hi="one,passage,whole">The digestive system is one passage from mouth to colon, and a symptom in one part is often a signal from another. That is why the whole tract is examined, not just the place that hurts.</p>
     </div>
-    <figure class="journey__fig clip">
+    <figure class="journey__fig rise">
       <img src="assets/img/anatomy.jpg" alt="Dr. Firoz Alimohamed showing patients the digestive tract on an anatomical chart">
     </figure>
   </div>
@@ -124,7 +124,7 @@
 <!-- ======================================================== SYMPTOMS -->
 <section class="bay-s">
   <div class="wrap sym-grid">
-    <div class="frame frame--tall clip">
+    <div class="frame frame--sq rise">
       <img src="assets/img/consult-hand.jpg" alt="Dr. Firoz Alimohamed listening to a patient in clinic" data-px="8">
     </div>
     <div>
@@ -141,18 +141,13 @@
   </div>
 </section>
 
-<!-- ============================================== CONDITIONS (pinned) -->
-<section class="pin">
-  <div class="pin__sticky">
-    <div class="pin__head">
-      <div>
-        <p class="marker">Conditions treated</p>
-        <h2>Five of the conditions seen most often</h2>
-      </div>
-      <div class="pin__prog" aria-hidden="true"><i></i></div>
-    </div>
-    <div class="pin__track">
-      <article class="card">
+<!-- ====================================================== CONDITIONS -->
+<section class="bay" style="background:var(--paper-2)">
+  <div class="wrap">
+    <p class="marker">Conditions treated</p>
+    <h2 style="font-size:var(--t-3);max-width:18ch;margin-bottom:clamp(1.6rem,2.8vw,2.4rem)">Five of the conditions seen most often</h2>
+    <ul class="ccards">
+      <li class="card rise">
         <figure class="card__fig"><img src="assets/img/consult-desk.jpg" alt="Discussing symptoms and treatment in clinic" loading="lazy"></figure>
         <div class="card__body">
           <div class="card__k">Stomach &amp; duodenum</div>
@@ -161,8 +156,8 @@
         <div class="card__tags"><span>Gastroscopy</span><span>H. pylori testing</span><span>Acid suppression</span></div>
         <div class="card__ln"></div>
         </div>
-      </article>
-      <article class="card">
+      </li>
+      <li class="card rise">
         <figure class="card__fig"><img src="assets/img/consult-room.jpg" alt="Consultation in the clinic room"></figure>
         <div class="card__body">
           <div class="card__k">Whole bowel</div>
@@ -171,8 +166,8 @@
         <div class="card__tags"><span>Exclusion of other causes</span><span>Diet review</span><span>Ongoing care</span></div>
         <div class="card__ln"></div>
         </div>
-      </article>
-      <article class="card">
+      </li>
+      <li class="card rise">
         <figure class="card__fig"><img src="assets/img/ward-notes.jpg" alt="Ward review with case notes"></figure>
         <div class="card__body">
           <div class="card__k">Immune inflammation</div>
@@ -181,8 +176,8 @@
         <div class="card__tags"><span>Colonoscopy</span><span>Biopsy</span><span>Maintenance therapy</span></div>
         <div class="card__ln"></div>
         </div>
-      </article>
-      <article class="card">
+      </li>
+      <li class="card rise">
         <figure class="card__fig"><img src="assets/img/procedure-room.jpg" alt="The endoscopy procedure room"></figure>
         <div class="card__body">
           <div class="card__k">Screening matters</div>
@@ -191,8 +186,8 @@
         <div class="card__tags"><span>Screening colonoscopy</span><span>Polyp removal</span><span>Surveillance</span></div>
         <div class="card__ln"></div>
         </div>
-      </article>
-      <article class="card">
+      </li>
+      <li class="card rise">
         <figure class="card__fig"><img src="assets/img/corridor-notes.jpg" alt="Reviewing results between clinics"></figure>
         <div class="card__body">
           <div class="card__k">Liver</div>
@@ -201,14 +196,14 @@
         <div class="card__tags"><span>Viral serology</span><span>Liver imaging</span><span>Antiviral therapy</span></div>
         <div class="card__ln"></div>
         </div>
-      </article>
-      <article class="card card--flat" style="background:var(--jade-deep);border-color:var(--jade-deep);color:#E6F0EB">
+      </li>
+      <li class="card rise card--flat" style="background:var(--jade-deep);border-color:var(--jade-deep);color:#E6F0EB">
         <div class="card__k" style="color:var(--ochre-2)">Not on the list?</div>
         <h3 style="color:#fff">Bring the symptom, not the diagnosis</h3>
         <p style="color:rgba(230,240,235,.78)">Reflux, coeliac disease, gallstones, pancreatitis, swallowing problems and unexplained anaemia are all part of routine gastroenterology practice. Describe what you are feeling. Naming it is the specialist's job.</p>
         <div style="margin-top:auto;padding-top:1.5rem"><a class="btn btn--light" href="conditions.html">Read the full list</a></div>
-      </article>
-    </div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -221,7 +216,7 @@
         <h2 style="font-size:var(--t-3);max-width:15ch">A camera answers in minutes what tests can only suggest</h2>
         <p class="muted" style="margin-top:1.2rem;max-width:46ch">An endoscope is a thin flexible tube with a light and a camera. It shows the lining of the gut directly, takes biopsies, stops bleeding, removes polyps and widens narrowed passages. Diagnosis and treatment happen in the same sitting.</p>
       </div>
-      <div class="frame frame--wide clip">
+      <div class="frame frame--wide rise">
         <img src="assets/img/endoscopy.jpg" alt="Dr. Firoz Alimohamed at the endoscopy tower, reviewing images of the bowel lining" data-px="10" width="1400" height="875">
       </div>
     </div>
@@ -253,14 +248,15 @@
 
 <!-- =========================================================== BLEED -->
 <section class="bleed">
-  <img src="assets/img/or-light.jpg" alt="Dr. Firoz Alimohamed preparing the procedure room" data-px="9" loading="lazy">
-  <div class="bleed__v"></div>
   <div class="bleed__t">
-    <div class="wrap">
+    <div class="bleed__in">
       <h2>Endoscopy lists run across the city</h2>
       <p>Inpatient reviews and procedure lists take place at all the major Mombasa hospitals, so an urgent finding on the ward does not have to wait for a clinic appointment.</p>
     </div>
   </div>
+  <figure class="bleed__fig">
+    <img src="assets/img/or-light.jpg" alt="Dr. Firoz Alimohamed in the procedure room" loading="lazy">
+  </figure>
 </section>
 
 <!-- ============================================================ PATH -->
@@ -286,9 +282,9 @@
       </li>
     </ol>
     <div class="strip" style="margin-top:clamp(1.8rem,3.4vw,2.6rem)">
-      <figure class="clip"><img src="assets/img/procedure-gown.jpg" alt="Dr. Firoz Alimohamed gowned for an endoscopy list"><figcaption>Endoscopy list</figcaption></figure>
-      <figure class="clip"><img src="assets/img/teaching.jpg" alt="Teaching round with junior colleagues"><figcaption>Teaching round</figcaption></figure>
-      <figure class="clip"><img src="assets/img/scrubs-a.jpg" alt="Between cases on the endoscopy list" loading="lazy"><figcaption>Between cases</figcaption></figure>
+      <figure class="rise"><img src="assets/img/procedure-gown.jpg" alt="Dr. Firoz Alimohamed gowned for an endoscopy list"><figcaption>Endoscopy list</figcaption></figure>
+      <figure class="rise"><img src="assets/img/teaching.jpg" alt="Teaching round with junior colleagues"><figcaption>Teaching round</figcaption></figure>
+      <figure class="rise"><img src="assets/img/scrubs-a.jpg" alt="Between cases on the endoscopy list" loading="lazy"><figcaption>Between cases</figcaption></figure>
     </div>
     <div style="margin-top:1.8rem"><a class="btn btn--ghost" href="about.html">Read the full profile</a></div>
   </div>
@@ -305,7 +301,7 @@
 <!-- ======================================================== LOCATION -->
 <section class="bay">
   <div class="wrap loc">
-    <div class="frame frame--sq clip">
+    <div class="frame frame--sq rise">
       <img src="assets/img/portrait-office.jpg" alt="Dr. Firoz Alimohamed at the clinic" data-px="8" loading="lazy">
     </div>
     <div>
