@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Firoz Alimohamed | Two website concepts</title>
+<meta name="description" content="Two independent website design concepts for Dr. Firoz Alimohamed, consultant gastroenterologist at The Mombasa Hospital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='9' fill='%230E6B56'/><path d='M27 13c-4-4-13-3-13 5s9 10 13 6' fill='none' stroke='%23E2A44E' stroke-width='3' stroke-linecap='round'/></svg>">
+<style>
+  :root{
+    --paper:#0C1613; --ink:#EAF1EE; --dim:rgba(234,241,238,.6); --dim2:rgba(234,241,238,.4);
+    --line:rgba(234,241,238,.14); --jade:#3FA98C; --ochre:#E2A44E;
+    --f-d:"Newsreader",Georgia,serif; --f-b:"Instrument Sans",system-ui,sans-serif;
+    --ease:cubic-bezier(.19,1,.22,1);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-b);
+    font-size:clamp(.97rem,.94rem + .16vw,1.05rem);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block;height:auto}
+  h1,h2,h3{font-family:var(--f-d);font-weight:500;letter-spacing:-.025em;line-height:1.03;margin:0}
+  .wrap{width:min(100% - 2.4rem,1120px);margin-inline:auto}
+
+  .top{padding:clamp(3.5rem,9vw,6.5rem) 0 clamp(2rem,4vw,3rem);position:relative;overflow:hidden}
+  .top::before{content:"";position:absolute;left:50%;top:-24rem;width:46rem;height:46rem;translate:-50% 0;
+    border-radius:50%;background:radial-gradient(circle,rgba(63,169,140,.16),transparent 66%);pointer-events:none}
+  .kicker{font-size:.82rem;color:var(--jade);font-weight:600;margin:0 0 1rem;position:relative}
+  .top h1{font-size:clamp(2.2rem,1.2rem + 4.4vw,4.4rem);max-width:16ch;position:relative}
+  .top h1 em{font-style:italic;font-weight:400;color:var(--jade)}
+  .top p{color:var(--dim);max-width:56ch;margin:1.3rem 0 0;font-size:clamp(1.02rem,.98rem + .3vw,1.2rem);position:relative}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.4vw,1.8rem);
+    padding-bottom:clamp(3rem,6vw,5rem)}
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+
+  .card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:rgba(255,255,255,.025);transition:border-color .4s,transform .6s var(--ease),background .4s}
+  .card:hover{border-color:var(--jade);transform:translateY(-5px);background:rgba(63,169,140,.06)}
+  .card__fig{aspect-ratio:16/10;overflow:hidden;background:#111d19;border-bottom:1px solid var(--line)}
+  .card__fig img{width:100%;height:100%;object-fit:cover;object-position:50% 0;
+    transition:transform 1s var(--ease)}
+  .card:hover .card__fig img{transform:scale(1.03)}
+  .card__b{padding:clamp(1.3rem,2.4vw,1.9rem)}
+  .card__n{font-size:.78rem;font-weight:600;color:var(--ochre);margin-bottom:.6rem}
+  .card h2{font-size:clamp(1.35rem,1.1rem + .9vw,1.9rem);margin-bottom:.6rem}
+  .card p{color:var(--dim);font-size:.95rem;margin:0 0 1.1rem;max-width:44ch}
+  .meta{display:flex;flex-wrap:wrap;gap:.4rem}
+  .meta span{font-size:.75rem;border:1px solid var(--line);color:var(--dim2);padding:.3em .75em;border-radius:999px}
+  .go{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.3rem;font-weight:600;font-size:.92rem;color:var(--jade)}
+  .go i{width:.4rem;height:.4rem;border-radius:50%;background:currentColor;transition:transform .45s var(--ease)}
+  .card:hover .go i{transform:scale(2.2)}
+
+  .note{border-top:1px solid var(--line);padding:clamp(2rem,4vw,3rem) 0;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+  @media (max-width:760px){.note{grid-template-columns:1fr}}
+  .note h3{font-family:var(--f-b);font-size:.88rem;font-weight:700;margin-bottom:.6rem}
+  .note p{color:var(--dim);font-size:.9rem;margin:0;max-width:40ch}
+  .foot{border-top:1px solid var(--line);padding:1.4rem 0 2.5rem;font-size:.82rem;color:var(--dim2)}
+  .foot p{margin:0;max-width:78ch}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="kicker">Website concepts for review</p>
+    <h1>Dr. Firoz Alimohamed, <em>gastroenterology</em> in Mombasa</h1>
+    <p>Two complete websites, each with four pages, its own visual identity, its own typography and its own motion language. Open either one and scroll.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+
+    <a class="card" href="site-one/index.html">
+      <div class="card__fig"><img src="shared/site-one-preview.jpg" alt="Site One homepage, light editorial design"></div>
+      <div class="card__b">
+        <div class="card__n">Concept one</div>
+        <h2>The Continuous Line</h2>
+        <p>Light and editorial. The gut is one passage from mouth to colon, so a single drawn line threads the page and inks itself in as you scroll, stop by stop.</p>
+        <div class="meta"><span>Newsreader</span><span>Jade and ochre</span><span>Scroll drawn tract</span><span>Pinned card rail</span></div>
+        <span class="go">Open Site One<i></i></span>
+      </div>
+    </a>
+
+    <a class="card" href="site-two/index.html">
+      <div class="card__fig"><img src="shared/site-two-preview.jpg" alt="Site Two homepage, dark immersive design"></div>
+      <div class="card__b">
+        <div class="card__n">Concept two</div>
+        <h2>The Aperture</h2>
+        <p>Dark and immersive. The hero is the view down an endoscope, drawn live on canvas, with rings receding toward a glow that follows your cursor.</p>
+        <div class="meta"><span>Archivo</span><span>Deep teal and mint</span><span>Canvas light tunnel</span><span>Pinned sequence</span></div>
+        <span class="go">Open Site Two<i></i></span>
+      </div>
+    </a>
+
+  </div>
+
+  <section class="note">
+    <div>
+      <h3>Real content, checked</h3>
+      <p>Training, practice, memberships, conditions and clinic details come from Dr. Firoz's own material. Everything should still be approved before going live.</p>
+    </div>
+    <div>
+      <h3>Placeholders to replace</h3>
+      <p>The telephone number and email address are stand ins. Both are flagged in the footer of every page.</p>
+    </div>
+    <div>
+      <h3>Forms are demonstrations</h3>
+      <p>The appointment forms validate and confirm, but send nothing. They need an endpoint or a form service before launch.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Information on these pages is general and does not replace a consultation. Design concepts prepared for Dr. Firoz Alimohamed, consultant gastroenterologist, The Mombasa Hospital.</p>
+  </div>
+</footer>
+
+</body>
+</html>

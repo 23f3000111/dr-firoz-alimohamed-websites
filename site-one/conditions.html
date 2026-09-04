@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conditions &amp; care | Gastro Center Mombasa</title>
+<meta name="description" content="Gastrointestinal and liver conditions treated by Dr. Firoz Alimohamed, the procedures used to diagnose them, and how to prepare for gastroscopy and colonoscopy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='9' fill='%230E6B56'/><path d='M27 13c-4-4-13-3-13 5s9 10 13 6' fill='none' stroke='%23E2A44E' stroke-width='3' stroke-linecap='round'/></svg>">
+<style>
+  .cond-list{border-top:var(--rail)}
+  .cond{border-bottom:var(--rail);display:grid;
+    grid-template-columns:minmax(0,.2fr) minmax(0,.3fr) minmax(0,.5fr);
+    gap:clamp(1rem,3vw,2.6rem);padding-block:clamp(1.4rem,3vw,2.3rem);position:relative;z-index:1;align-items:start}
+  .cond::before{content:"";position:absolute;left:calc(var(--gut) * -.5);right:calc(var(--gut) * -.5);top:0;bottom:0;
+    background:var(--white);z-index:-1;opacity:0;transform:scaleY(.86);
+    transition:opacity .4s var(--ease),transform .4s var(--ease);border-radius:12px}
+  .cond:hover::before{opacity:1;transform:none}
+  .cond h3{font-size:var(--t-2)}
+  .cond__k{font-size:.79rem;font-weight:600;color:var(--ochre);margin-bottom:.5rem}
+  .cond p{margin:0;font-size:1rem;color:var(--ink-2)}
+  .cond__tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+  .cond__tags span{font-size:.77rem;border:var(--rail);padding:.3em .75em;border-radius:999px;color:var(--ink-3)}
+  @media (max-width:980px){.cond{grid-template-columns:minmax(0,.28fr) minmax(0,.72fr);gap:1.2rem}
+    .cond__fig{grid-row:span 2}}
+  @media (max-width:680px){.cond{grid-template-columns:1fr;gap:.8rem}
+    .cond__fig{grid-row:auto;aspect-ratio:16/9}}
+
+  .procs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(14,33,26,.15);border:var(--rail)}
+  .procs > li{background:var(--paper);transition:background .35s;display:flex;flex-direction:column}
+  .p-fig{margin:0;aspect-ratio:16/9;overflow:hidden;background:var(--shell)}
+  .p-fig img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+  .procs > li:hover .p-fig img{transform:scale(1.04)}
+  .p-body{padding:clamp(1.3rem,2.4vw,2rem);display:flex;flex-direction:column;flex:1}
+  .procs > li:hover{background:var(--white)}
+  .procs h3{font-size:1.3rem;margin-bottom:.6rem}
+  .procs p{font-size:.95rem;color:var(--ink-2);margin:0}
+  .procs .dur{display:inline-block;margin-top:1rem;font-size:.79rem;color:var(--jade);
+    border:1px solid var(--jade-tint);background:var(--jade-tint);border-radius:999px;padding:.3em .8em}
+  @media (max-width:760px){.procs{grid-template-columns:1fr}}
+
+  .prep{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,3vw,2.4rem)}
+  .prep > div{background:var(--white);border:var(--rail);border-radius:14px;padding:clamp(1.4rem,2.6vw,2rem)}
+  .prep h3{font-size:1.3rem;margin-bottom:1rem}
+  .prep ol{counter-reset:p}
+  .prep ol li{position:relative;padding-left:2.2rem;margin-bottom:.8rem;font-size:.95rem;color:var(--ink-2)}
+  .prep ol li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.05em;
+    width:1.5rem;height:1.5rem;border-radius:50%;background:var(--jade);color:#fff;
+    display:grid;place-items:center;font-size:.78rem;font-weight:700;font-family:var(--f-b)}
+  @media (max-width:760px){.prep{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="head">
+  <div class="wrap head__in">
+    <a class="brand" href="index.html" aria-label="Gastro Center Mombasa, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M31 12.5C27.5 7.5 9 7 9 20s18.5 12.5 22 7.5"/></svg>
+      <span><b>Gastro Center</b><i>Mombasa</i></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html"><span>Home</span><span>Home</span></a>
+      <a href="about.html"><span>About Dr. Firoz</span><span>About Dr. Firoz</span></a>
+      <a href="conditions.html" aria-current="page"><span>Conditions &amp; care</span><span>Conditions &amp; care</span></a>
+      <a href="appointment.html"><span>Appointment</span><span>Appointment</span></a>
+    </nav>
+    <div class="head__cta">
+      <a class="btn" href="appointment.html" data-mag>Book a consultation<i class="dot"></i></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap phead__grid">
+    <div>
+      <p class="crumb"><a href="index.html">Home</a> / Conditions &amp; care</p>
+      <h1>
+        <span class="ln"><i>What is treated,</i></span>
+        <span class="ln"><i>and how it is found</i></span>
+      </h1>
+      <p class="lede">Gastrointestinal conditions announce themselves through symptoms that overlap: bloating, heartburn, abdominal pain, constipation, jaundice. Below is what those symptoms usually turn out to be, and the procedures that tell them apart.</p>
+    </div>
+    <ul class="phead__facts">
+      <li><b>Gastroscopy</b><span>Oesophagus, stomach and duodenum</span></li>
+      <li><b>Colonoscopy</b><span>The full length of the large bowel</span></li>
+      <li><b>Therapeutic</b><span>Bleeding, polyps, strictures, bile ducts</span></li>
+      <li><b>Liver</b><span>Hepatitis, fatty liver, abnormal blood tests</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="bay">
+  <div class="wrap">
+    <p class="marker">Conditions</p>
+    <h2 style="font-size:var(--t-3);max-width:16ch;margin-bottom:clamp(1.5rem,2.6vw,2.2rem)">Conditions treated at the clinic</h2>
+
+    <div class="cond-list">
+      <article class="cond rise">
+        <figure class="cond__fig"><img src="assets/img/anatomy.jpg" alt="The digestive tract explained on an anatomical chart" loading="lazy"></figure>
+        <div><div class="cond__k">Stomach &amp; duodenum</div><h3>Peptic ulcers</h3></div>
+        <div>
+          <p>Open sores in the lining of the stomach or the first part of the small bowel, causing gnawing or burning upper abdominal pain that often changes with meals. Most are caused by <i>H. pylori</i> infection or by long term use of anti inflammatory painkillers. Untreated they can bleed or perforate; treated, the great majority heal completely.</p>
+          <div class="cond__tags"><span>Gastroscopy</span><span>H. pylori testing</span><span>Eradication therapy</span><span>Acid suppression</span></div>
+        </div>
+      </article>
+
+      <article class="cond rise">
+        <figure class="cond__fig"><img src="assets/img/consult-room.jpg" alt="Consultation in the clinic room" loading="lazy"></figure>
+        <div><div class="cond__k">Whole bowel</div><h3>Irritable bowel syndrome</h3></div>
+        <div>
+          <p>Recurring abdominal pain with bloating and a changed bowel habit, where the bowel wall itself looks normal. It is real, it is common, and it is diagnosed properly, by first excluding coeliac disease, inflammatory bowel disease and other causes that look identical from the outside. Management combines diet, targeted medicines and review over time.</p>
+          <div class="cond__tags"><span>Exclusion of other causes</span><span>Coeliac screening</span><span>Diet review</span><span>Ongoing follow up</span></div>
+        </div>
+      </article>
+
+      <article class="cond rise">
+        <figure class="cond__fig"><img src="assets/img/ward-notes.jpg" alt="Ward review with case notes" loading="lazy"></figure>
+        <div><div class="cond__k">Immune inflammation</div><h3>Inflammatory bowel disease</h3></div>
+        <div>
+          <p>Crohn's disease and ulcerative colitis inflame and ulcerate the bowel wall, producing diarrhoea, blood, urgency, pain and weight loss. Diagnosis needs endoscopy with biopsies, and often imaging. Treatment aims at remission, getting the inflammation to settle and keeping it settled, with regular monitoring rather than treatment only during flare ups.</p>
+          <div class="cond__tags"><span>Colonoscopy</span><span>Biopsy</span><span>Maintenance therapy</span><span>Flare management</span></div>
+        </div>
+      </article>
+
+      <article class="cond rise">
+        <figure class="cond__fig"><img src="assets/img/procedure-room.jpg" alt="The endoscopy procedure room" loading="lazy"></figure>
+        <div><div class="cond__k">Screening matters</div><h3>Colon cancer</h3></div>
+        <div>
+          <p>Nearly all colon cancers begin as polyps, small growths that cause no symptoms for years. Colonoscopy finds polyps and removes them during the same examination, which is why screening prevents cancer rather than only detecting it. Screening usually starts at fifty, and earlier where a close relative has been affected.</p>
+          <div class="cond__tags"><span>Screening colonoscopy</span><span>Polypectomy</span><span>Surveillance intervals</span><span>Family history assessment</span></div>
+        </div>
+      </article>
+
+      <article class="cond rise">
+        <figure class="cond__fig"><img src="assets/img/corridor-notes.jpg" alt="Reviewing liver results between clinics" loading="lazy"></figure>
+        <div><div class="cond__k">Liver</div><h3>Hepatitis and liver disease</h3></div>
+        <div>
+          <p>Inflammation of the liver from viral infection, alcohol, medicines, or fat deposited in the liver. It is frequently silent, showing up first as an abnormal blood test rather than as jaundice. Establishing the cause is the whole task. Viral hepatitis is treatable, fatty liver responds to metabolic management, and both benefit from being found early.</p>
+          <div class="cond__tags"><span>Viral serology</span><span>Liver function tests</span><span>Imaging</span><span>Antiviral therapy</span></div>
+        </div>
+      </article>
+
+      <article class="cond rise">
+        <figure class="cond__fig"><img src="assets/img/consult-hand.jpg" alt="Talking a patient through the plan" loading="lazy"></figure>
+        <div><div class="cond__k">Also seen</div><h3>Reflux, coeliac disease, gallstones and more</h3></div>
+        <div>
+          <p>Acid reflux and hiatus hernia, coeliac disease, gallstones and biliary pain, pancreatitis, difficulty swallowing, chronic constipation and diarrhoea, unexplained iron deficiency anaemia, and abnormal liver blood tests are all routine gastroenterology work. If your symptom is not listed, it is still worth bringing.</p>
+          <div class="cond__tags"><span>Reflux</span><span>Coeliac disease</span><span>Gallstones</span><span>Dysphagia</span><span>Anaemia</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bay" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="scope__head">
+      <div>
+        <p class="marker">Procedures</p>
+        <h2 style="font-size:var(--t-3);max-width:15ch">Advanced diagnostic and therapeutic endoscopy</h2>
+        <p class="muted" style="margin-top:1.2rem;max-width:46ch">Every procedure below is performed by Dr. Firoz himself, with light sedation and monitoring. Findings are explained the same day, in plain language, with written results.</p>
+      </div>
+      <div class="frame frame--wide clip">
+        <img src="assets/img/procedure-room.jpg" alt="Dr. Firoz Alimohamed in the procedure room" data-px="10">
+      </div>
+    </div>
+
+    <ul class="procs">
+      <li class="rise">
+        <figure class="p-fig"><img src="assets/img/endoscopy.jpg" alt="The endoscopy tower during a gastroscopy"></figure>
+        <div class="p-body">
+        <h3>Gastroscopy</h3>
+        <p>A thin camera passed through the mouth to examine the oesophagus, stomach and the first part of the small bowel. It answers questions about reflux, swallowing difficulty, ulcers, upper abdominal pain and anaemia, and takes biopsies for coeliac disease and <i>H. pylori</i> in the same pass.</p>
+        <span class="dur">Usually 10 to 20 minutes</span>
+        </div>
+      </li>
+      <li class="rise">
+        <figure class="p-fig"><img src="assets/img/or-light.jpg" alt="Preparing the procedure room for a colonoscopy list"></figure>
+        <div class="p-body">
+        <h3>Colonoscopy</h3>
+        <p>Examination of the full length of the large bowel. It is the definitive test for rectal bleeding, changed bowel habit, chronic diarrhoea and iron deficiency anaemia, and the screening test for bowel cancer. Polyps found during the examination are removed as they are found.</p>
+        <span class="dur">Usually 20 to 40 minutes</span>
+        </div>
+      </li>
+      <li class="rise">
+        <figure class="p-fig"><img src="assets/img/procedure-gown.jpg" alt="Dr. Firoz Alimohamed gowned for a therapeutic procedure"></figure>
+        <div class="p-body">
+        <h3>Therapeutic endoscopy</h3>
+        <p>Where the camera treats as well as looks: stopping a bleeding ulcer or varix, removing polyps, stretching a narrowed oesophagus, placing stents, and relieving blocked bile ducts. This is the work that turns an emergency admission into a same day treatment.</p>
+        <span class="dur">Varies by procedure</span>
+        </div>
+      </li>
+      <li class="rise">
+        <figure class="p-fig"><img src="assets/img/corridor-notes.jpg" alt="Reviewing liver results between clinics"></figure>
+        <div class="p-body">
+        <h3>Liver assessment</h3>
+        <p>A structured assessment of abnormal liver blood tests or suspected liver disease: history, viral serology, metabolic screening, imaging, and liver biopsy where the diagnosis needs it. The aim is a named cause, not a description.</p>
+        <span class="dur">Clinic based, in stages</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bay">
+  <div class="wrap">
+    <p class="marker">Preparing</p>
+    <h2 style="font-size:var(--t-3);max-width:17ch;margin-bottom:clamp(1.5rem,2.6vw,2.2rem)">How to prepare, and what to bring</h2>
+    <div class="prep">
+      <div class="rise">
+        <h3>Before a gastroscopy</h3>
+        <ol>
+          <li>Nothing to eat for six hours before the appointment. Clear fluids may be allowed up to two hours before, and you will be told which.</li>
+          <li>Keep taking your regular medicines unless told otherwise. Blood thinners and diabetes medicines need specific instructions.</li>
+          <li>Bring someone who can take you home. Sedation makes driving unsafe for the rest of the day.</li>
+          <li>Bring your current medicine list and any previous endoscopy or scan reports.</li>
+        </ol>
+      </div>
+      <div class="rise">
+        <h3>Before a colonoscopy</h3>
+        <ol>
+          <li>Start the low residue diet on the day given to you, usually the day before the procedure.</li>
+          <li>Take the bowel preparation exactly as timed. A clean bowel is what makes the examination accurate.</li>
+          <li>Stay near a bathroom during preparation, and keep drinking clear fluids so you do not become dehydrated.</li>
+          <li>Arrange a companion for the journey home, and plan a quiet rest of the day.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:1.6rem;font-size:.92rem">These are general guides. Your written instructions from the clinic always take priority, because preparation changes with the procedure and with the medicines you take.</p>
+  </div>
+</section>
+
+<section class="bleed">
+  <img src="assets/img/scrubs-b.jpg" alt="Dr. Firoz Alimohamed in scrubs before a list" data-px="9" loading="lazy">
+  <div class="bleed__v"></div>
+  <div class="bleed__t">
+    <div class="wrap">
+      <h2>Every procedure performed by Dr. Firoz himself</h2>
+      <p>Not delegated, not supervised from another room. The doctor who takes your history is the one holding the scope.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bay-s" style="background:var(--paper-2)">
+  <div class="wrap" style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.6rem,5vw,4.5rem);align-items:start">
+    <div>
+      <p class="marker">Questions</p>
+      <h2 style="font-size:var(--t-3);max-width:12ch">Asked before nearly every procedure</h2>
+    </div>
+    <div class="acc">
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false">Will the endoscopy hurt?</button>
+        <div class="acc__panel"><div><p>No. Light sedation is given through a vein, and most people remember very little of the examination. You will feel drowsy afterwards and should rest for the remainder of the day.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false">When do I get the results?</button>
+        <div class="acc__panel"><div><p>What was seen is explained the same day, once the sedation has worn off, and you are given a written report. Biopsy results take longer, usually about a week, and are discussed at a follow up appointment.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false">Do I need a referral from another doctor?</button>
+        <div class="acc__panel"><div><p>A referral letter is helpful because it carries your history and previous results, but you can also book a consultation directly. Bring whatever reports and medicine lists you already hold.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false">Should I be screened for bowel cancer?</button>
+        <div class="acc__panel"><div><p>Screening is generally recommended from the age of fifty, and earlier if a parent, brother or sister has had bowel cancer or if you have inflammatory bowel disease. Rectal bleeding or a changed bowel habit at any age should be assessed rather than watched.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false">Can I keep taking my usual medicines?</button>
+        <div class="acc__panel"><div><p>Usually yes. Blood thinners, insulin and some diabetes tablets are the exceptions and need specific timing instructions, which is why the clinic asks for a full medicine list when you book.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false">What if something is found?</button>
+        <div class="acc__panel"><div><p>Polyps are removed during the examination. Where a biopsy or further imaging is needed, it is arranged before you leave, and you are given the plan in writing along with a named next step.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta bay">
+  <svg class="cta__ring" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="49"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="23"/>
+  </svg>
+  <div class="wrap cta__in">
+    <div>
+      <h2>Book the examination that answers it</h2>
+      <p style="max-width:44ch;margin-top:1.1rem">Consultations run Monday to Friday, 9am to 5pm, from Suite 5 at The Mombasa Hospital.</p>
+    </div>
+    <div class="cta__acts">
+      <a class="btn btn--light" href="appointment.html" data-mag>Request an appointment<i class="dot"></i></a>
+      <a class="btn btn--ghost" href="about.html">About Dr. Firoz</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M31 12.5C27.5 7.5 9 7 9 20s18.5 12.5 22 7.5"/></svg>
+          <span><b>Gastro Center</b><i>Mombasa</i></span>
+        </a>
+        <p style="margin-top:1.2rem;font-size:.93rem;max-width:34ch;color:rgba(189,204,197,.8)">Consultant gastroenterology and endoscopy for adults, at The Mombasa Hospital and across the city.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Firoz</a></li>
+          <li><a href="conditions.html">Conditions &amp; care</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="conditions.html">Gastroscopy</a></li>
+          <li><a href="conditions.html">Colonoscopy</a></li>
+          <li><a href="conditions.html">Liver disease</a></li>
+          <li><a href="conditions.html">Bowel cancer screening</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Suite 5, The Mombasa Hospital</li>
+          <li>Mombasa, Kenya</li>
+          <li><a href="tel:+254410000000">+254 41 000 0000</a></li>
+          <li><a href="mailto:appointments@gastrocentermombasa.com">appointments@gastrocentermombasa.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__big" aria-hidden="true">Gastro Center Mombasa</div>
+    <div class="foot__note">
+      <p>© <span data-year>2026</span> Gastro Center Mombasa. Information on this site is general and does not replace a consultation. Telephone and email are placeholders pending confirmation.</p>
+      <p>Design concept: Site One</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

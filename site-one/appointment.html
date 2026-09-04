@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appointment | Gastro Center Mombasa</title>
+<meta name="description" content="Request a gastroenterology consultation with Dr. Firoz Alimohamed at Suite 5, The Mombasa Hospital. Open Monday to Friday, 9am to 5pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='9' fill='%230E6B56'/><path d='M27 13c-4-4-13-3-13 5s9 10 13 6' fill='none' stroke='%23E2A44E' stroke-width='3' stroke-linecap='round'/></svg>">
+<style>
+  .book{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1.8rem,5vw,4.5rem);align-items:start}
+  .book__form{background:var(--white);border:var(--rail);border-radius:18px;padding:clamp(1.5rem,3vw,2.6rem)}
+  .book__side{position:sticky;top:6.5rem}
+  .info{border-top:var(--rail)}
+  .info li{padding:1rem 0;border-bottom:var(--rail)}
+  .info b{display:block;font-size:.83rem;color:var(--ink-3);font-weight:600;margin-bottom:.25rem}
+  .info span,.info a{font-size:1.02rem;font-family:var(--f-d);letter-spacing:-.01em}
+  .info a{color:var(--jade);text-decoration:none}
+  .info a:hover{text-decoration:underline}
+  .bring{background:var(--ochre-tint);border-left:3px solid var(--ochre);border-radius:0 12px 12px 0;
+    padding:1.3rem 1.4rem;margin-top:1.8rem}
+  .bring h3{font-size:1.15rem;margin-bottom:.7rem}
+  .bring li{font-size:.93rem;padding-left:1.4rem;position:relative;margin-bottom:.45rem;color:var(--ink-2)}
+  .bring li::before{content:"";position:absolute;left:0;top:.6em;width:.45rem;height:.45rem;border-radius:50%;background:var(--ochre)}
+  .urgent{border:var(--rail-2);border-radius:14px;padding:1.3rem 1.4rem;margin-top:1.4rem}
+  .urgent h3{font-size:1.1rem;margin-bottom:.5rem}
+  .urgent p{font-size:.92rem;margin:0;color:var(--ink-2)}
+  @media (max-width:900px){.book{grid-template-columns:1fr}.book__side{position:static}}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="head">
+  <div class="wrap head__in">
+    <a class="brand" href="index.html" aria-label="Gastro Center Mombasa, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M31 12.5C27.5 7.5 9 7 9 20s18.5 12.5 22 7.5"/></svg>
+      <span><b>Gastro Center</b><i>Mombasa</i></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html"><span>Home</span><span>Home</span></a>
+      <a href="about.html"><span>About Dr. Firoz</span><span>About Dr. Firoz</span></a>
+      <a href="conditions.html"><span>Conditions &amp; care</span><span>Conditions &amp; care</span></a>
+      <a href="appointment.html" aria-current="page"><span>Appointment</span><span>Appointment</span></a>
+    </nav>
+    <div class="head__cta">
+      <a class="btn" href="#form" data-mag>Go to the form<i class="dot"></i></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">Home</a> / Appointment</p>
+    <h1>
+      <span class="ln"><i>Book a consultation</i></span>
+    </h1>
+    <p class="lede">Send the request below and the clinic will confirm a time by telephone. If you already have reports, blood tests or a referral letter, mention them. It usually saves a visit.</p>
+  </div>
+</section>
+
+<section class="bay">
+  <div class="wrap book">
+
+    <div class="book__form" id="form">
+      <h2 style="font-size:var(--t-2);margin-bottom:.6rem">Appointment request</h2>
+      <p class="muted" style="font-size:.94rem;margin-bottom:1.8rem">All fields marked with an asterisk are needed to confirm your booking.</p>
+
+      <form class="form" data-demo novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="fn">Full name *</label>
+            <input id="fn" name="fn" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="ph">Telephone *</label>
+            <input id="ph" name="ph" type="tel" autocomplete="tel" placeholder="+254" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="em">Email</label>
+            <input id="em" name="em" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="ag">Age</label>
+            <input id="ag" name="ag" type="number" min="0" max="120">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="rs">Reason for the visit *</label>
+            <select id="rs" name="rs" required>
+              <option value="">Choose one</option>
+              <option>New consultation</option>
+              <option>Follow up appointment</option>
+              <option>Gastroscopy</option>
+              <option>Colonoscopy</option>
+              <option>Bowel cancer screening</option>
+              <option>Liver assessment</option>
+              <option>Referral from another doctor</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pf">Preferred day</label>
+            <input id="pf" name="pf" type="date">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="sy">What are you experiencing?</label>
+          <textarea id="sy" name="sy" placeholder="Describe the symptom, how long it has been going on, and anything that makes it better or worse."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="md">Medicines you take</label>
+          <input id="md" name="md" type="text" placeholder="Include blood thinners and diabetes medicines">
+        </div>
+
+        <button class="btn" type="submit" style="justify-self:start" data-mag>Send request<i class="dot"></i></button>
+        <p class="form__note">The clinic replies within one working day. This form is a design demonstration and does not transmit anything.</p>
+        <div class="form__ok" role="status">Request received. The clinic will telephone you to confirm the time, usually within one working day.</div>
+      </form>
+    </div>
+
+    <aside class="book__side">
+      <p class="marker">The clinic</p>
+      <h2 style="font-size:var(--t-2);max-width:13ch">Suite 5, The Mombasa Hospital</h2>
+      <ul class="info">
+        <li><b>Consulting hours</b><span>Monday to Friday, 9:00am to 5:00pm</span></li>
+        <li><b>Telephone</b><a href="tel:+254410000000">+254 41 000 0000</a></li>
+        <li><b>Email</b><a href="mailto:appointments@gastrocentermombasa.com">appointments@gastrocentermombasa.com</a></li>
+        <li><b>Also consulting at</b><span>Aga Khan Hospital, Mombasa</span></li>
+      </ul>
+
+      <div class="bring">
+        <h3>Bring with you</h3>
+        <ul>
+          <li>Your current medicine list, including anything bought over the counter</li>
+          <li>Previous endoscopy, scan and blood test reports</li>
+          <li>Your referral letter, if you have one</li>
+          <li>Insurance details, where the visit is covered</li>
+        </ul>
+      </div>
+
+      <div class="urgent">
+        <h3>If it is urgent</h3>
+        <p>Vomiting blood, black tarry stools, severe abdominal pain or new jaundice need same day assessment. Go to the hospital rather than waiting for a clinic appointment.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<section class="bay-s" style="background:var(--paper-2)">
+  <div class="wrap" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.6rem,5vw,4.5rem);align-items:center">
+    <div class="frame frame--wide clip"><img src="assets/img/consult-desk.jpg" alt="Dr. Firoz Alimohamed in consultation" data-px="9"></div>
+    <div>
+      <p class="marker">What the first visit looks like</p>
+      <h2 style="font-size:var(--t-3);max-width:15ch">Thirty minutes, and a plan you leave with</h2>
+      <p class="muted" style="margin-top:1.2rem">The consultation starts with your account of the symptom: when it began, what changes it, what you have already tried. Then examination, then a decision about which tests actually add something. Not every visit needs an endoscopy, and you will be told plainly when it does not.</p>
+      <p class="muted">You leave knowing what is suspected, what will confirm it, and when you will hear back.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bay-s">
+  <div class="wrap">
+    <p class="marker">The clinic in practice</p>
+    <h2 style="font-size:var(--t-3);max-width:20ch;margin-bottom:clamp(1.5rem,2.6vw,2.2rem)">What the rooms actually look like</h2>
+    <div class="strip">
+      <figure class="clip"><img src="assets/img/portrait-office.jpg" alt="Dr. Firoz Alimohamed in the consulting suite" loading="lazy"><figcaption>Suite 5</figcaption></figure>
+      <figure class="clip"><img src="assets/img/procedure-room.jpg" alt="The endoscopy procedure room" loading="lazy"><figcaption>Endoscopy room</figcaption></figure>
+      <figure class="clip"><img src="assets/img/teaching.jpg" alt="Teaching round with junior colleagues" loading="lazy"><figcaption>Teaching round</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="cta bay">
+  <svg class="cta__ring" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="49"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="23"/>
+  </svg>
+  <div class="wrap cta__in">
+    <div>
+      <h2>Prefer to speak to someone?</h2>
+      <p style="max-width:44ch;margin-top:1.1rem">The clinic answers the telephone through consulting hours, Monday to Friday.</p>
+    </div>
+    <div class="cta__acts">
+      <a class="btn btn--light" href="tel:+254410000000" data-mag>+254 41 000 0000<i class="dot"></i></a>
+      <a class="btn btn--ghost" href="conditions.html">Preparation guides</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M31 12.5C27.5 7.5 9 7 9 20s18.5 12.5 22 7.5"/></svg>
+          <span><b>Gastro Center</b><i>Mombasa</i></span>
+        </a>
+        <p style="margin-top:1.2rem;font-size:.93rem;max-width:34ch;color:rgba(189,204,197,.8)">Consultant gastroenterology and endoscopy for adults, at The Mombasa Hospital and across the city.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Firoz</a></li>
+          <li><a href="conditions.html">Conditions &amp; care</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="conditions.html">Gastroscopy</a></li>
+          <li><a href="conditions.html">Colonoscopy</a></li>
+          <li><a href="conditions.html">Liver disease</a></li>
+          <li><a href="conditions.html">Bowel cancer screening</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Suite 5, The Mombasa Hospital</li>
+          <li>Mombasa, Kenya</li>
+          <li><a href="tel:+254410000000">+254 41 000 0000</a></li>
+          <li><a href="mailto:appointments@gastrocentermombasa.com">appointments@gastrocentermombasa.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__big" aria-hidden="true">Gastro Center Mombasa</div>
+    <div class="foot__note">
+      <p>© <span data-year>2026</span> Gastro Center Mombasa. Information on this site is general and does not replace a consultation. Telephone and email are placeholders pending confirmation.</p>
+      <p>Design concept: Site One</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
