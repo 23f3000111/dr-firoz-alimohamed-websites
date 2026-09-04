@@ -7,7 +7,6 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var lerp = function (a, b, n) { return a + (b - a) * n; };
   var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
 
   /* ---------------------------------------------------------- preloader */
@@ -39,27 +38,6 @@
       }, 3600);
     }
   } else { bootIn(); }
-
-  /* ------------------------------------------------------------- cursor */
-  if (fine && !reduce) {
-    var dot = document.createElement('div'); dot.className = 'cur';
-    var ring = document.createElement('div'); ring.className = 'cur-r';
-    document.body.appendChild(dot); document.body.appendChild(ring);
-    var mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-    addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
-    }, { passive: true });
-    (function loop() {
-      rx = lerp(rx, mx, 0.16); ry = lerp(ry, my, 0.16);
-      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
-      requestAnimationFrame(loop);
-    })();
-    document.addEventListener('mouseover', function (e) {
-      var t = e.target.closest('a,button,input,select,textarea,.card,.gal figure');
-      document.body.setAttribute('data-cur', t ? 'link' : '');
-    });
-  }
 
   /* ------------------------------------------------------------- header */
   var head = document.querySelector('.head');
@@ -280,6 +258,57 @@
     }, { passive: true });
     heroSec.addEventListener('mouseleave', function () { heroFig.style.transform = ''; });
   }
+
+  /* ----------------------------------------------------------- carousel */
+  document.querySelectorAll('.caro').forEach(function (caro) {
+    var track = caro.querySelector('.caro__track');
+    if (!track) return;
+    // the arrows live in the section head, alongside the carousel, not inside it
+    var scope = caro.closest('.wrap') || document;
+    var owns = track.id ? '[aria-controls="' + track.id + '"]' : '';
+    var prev = scope.querySelector('[data-caro="prev"]' + owns);
+    var next = scope.querySelector('[data-caro="next"]' + owns);
+    var bar = caro.querySelector('.caro__rail i');
+    var behavior = reduce ? 'auto' : 'smooth';
+
+    function step() {
+      var first = track.firstElementChild;
+      if (!first) return track.clientWidth;
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return first.getBoundingClientRect().width + gap;
+    }
+    function paint() {
+      var max = track.scrollWidth - track.clientWidth;
+      var frac = track.scrollWidth ? track.clientWidth / track.scrollWidth : 1;
+      var p = max > 1 ? clamp(track.scrollLeft / max, 0, 1) : 0;
+      if (bar) {
+        bar.style.width = (Math.min(frac, 1) * 100) + '%';
+        bar.style.transform = 'translateX(' + (p * (100 / Math.min(frac, 1) - 100)) + '%)';
+      }
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+    }
+    // aim at an absolute position so a burst of clicks still lands a card at a time
+    var target = null, settle;
+    function go(dir) {
+      var s = step(), max = track.scrollWidth - track.clientWidth;
+      var from = target === null ? track.scrollLeft : target;
+      target = clamp(Math.round((from + dir * s) / s) * s, 0, max);
+      track.scrollTo({ left: target, behavior: behavior });
+      clearTimeout(settle);
+      settle = setTimeout(function () { target = null; }, 700);
+    }
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+    if (next) next.addEventListener('click', function () { go(1); });
+
+    var t = false;
+    track.addEventListener('scroll', function () {
+      if (!t) { t = true; requestAnimationFrame(function () { t = false; paint(); }); }
+    }, { passive: true });
+    addEventListener('resize', paint);
+    addEventListener('load', paint);
+    paint();
+  });
 
   /* ---------------------------------------------------------- accordion */
   document.querySelectorAll('.acc').forEach(function (acc) {

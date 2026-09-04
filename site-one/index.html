@@ -65,7 +65,6 @@
     </div>
 
     <div class="hero__fig">
-      <svg class="hero__orbit" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49"/></svg>
       <figure><img src="assets/img/portrait-studio.jpg" alt="Dr. Firoz Alimohamed, consultant gastroenterologist" width="900" height="1125"></figure>
       <div class="hero__badge">
         <b>Dr. Firoz Alimohamed</b>
@@ -144,66 +143,82 @@
 <!-- ====================================================== CONDITIONS -->
 <section class="bay" style="background:var(--paper-2)">
   <div class="wrap">
-    <p class="marker">Conditions treated</p>
-    <h2 style="font-size:var(--t-3);max-width:18ch;margin-bottom:clamp(1.6rem,2.8vw,2.4rem)">Five of the conditions seen most often</h2>
-    <ul class="ccards">
-      <li class="card rise">
-        <figure class="card__fig"><img src="assets/img/consult-desk.jpg" alt="Discussing symptoms and treatment in clinic" loading="lazy"></figure>
-        <div class="card__body">
-          <div class="card__k">Stomach &amp; duodenum</div>
-        <h3>Peptic ulcers</h3>
-        <p>Open sores in the lining of the stomach or the first part of the small bowel. They cause gnawing upper abdominal pain and can bleed. Most are linked to <i>H. pylori</i> infection or to long term anti inflammatory tablets, and both causes are treatable.</p>
-        <div class="card__tags"><span>Gastroscopy</span><span>H. pylori testing</span><span>Acid suppression</span></div>
-        <div class="card__ln"></div>
-        </div>
-      </li>
-      <li class="card rise">
-        <figure class="card__fig"><img src="assets/img/consult-room.jpg" alt="Consultation in the clinic room"></figure>
-        <div class="card__body">
-          <div class="card__k">Whole bowel</div>
-        <h3>Irritable bowel syndrome</h3>
-        <p>Pain, bloating and a changed bowel habit without damage visible in the bowel wall. It is diagnosed carefully, by first ruling out the conditions that look similar, and then managed with diet, targeted medicines and follow up.</p>
-        <div class="card__tags"><span>Exclusion of other causes</span><span>Diet review</span><span>Ongoing care</span></div>
-        <div class="card__ln"></div>
-        </div>
-      </li>
-      <li class="card rise">
-        <figure class="card__fig"><img src="assets/img/ward-notes.jpg" alt="Ward review with case notes"></figure>
-        <div class="card__body">
-          <div class="card__k">Immune inflammation</div>
-        <h3>Inflammatory bowel disease</h3>
-        <p>Crohn's disease and ulcerative colitis inflame and ulcerate the bowel wall, causing diarrhoea, bleeding, pain and weight loss. Both need confirmed diagnosis by endoscopy and biopsy, then treatment that keeps the disease quiet for years.</p>
-        <div class="card__tags"><span>Colonoscopy</span><span>Biopsy</span><span>Maintenance therapy</span></div>
-        <div class="card__ln"></div>
-        </div>
-      </li>
-      <li class="card rise">
-        <figure class="card__fig"><img src="assets/img/procedure-room.jpg" alt="The endoscopy procedure room"></figure>
-        <div class="card__body">
-          <div class="card__k">Screening matters</div>
-        <h3>Colon cancer</h3>
-        <p>Most colon cancers begin as polyps that cause no symptoms at all. Colonoscopy finds them and removes them in the same session, which is why screening from your fifties, or earlier with a family history, changes outcomes.</p>
-        <div class="card__tags"><span>Screening colonoscopy</span><span>Polyp removal</span><span>Surveillance</span></div>
-        <div class="card__ln"></div>
-        </div>
-      </li>
-      <li class="card rise">
-        <figure class="card__fig"><img src="assets/img/corridor-notes.jpg" alt="Reviewing results between clinics"></figure>
-        <div class="card__body">
-          <div class="card__k">Liver</div>
-        <h3>Hepatitis</h3>
-        <p>Inflammation of the liver, from viral infection, alcohol, medicines or fat deposits. It can be silent for years before jaundice appears. Blood tests, imaging and, where needed, liver biopsy establish the cause and guide treatment.</p>
-        <div class="card__tags"><span>Viral serology</span><span>Liver imaging</span><span>Antiviral therapy</span></div>
-        <div class="card__ln"></div>
-        </div>
-      </li>
-      <li class="card rise card--flat" style="background:var(--jade-deep);border-color:var(--jade-deep);color:#E6F0EB">
-        <div class="card__k" style="color:var(--ochre-2)">Not on the list?</div>
-        <h3 style="color:#fff">Bring the symptom, not the diagnosis</h3>
-        <p style="color:rgba(230,240,235,.78)">Reflux, coeliac disease, gallstones, pancreatitis, swallowing problems and unexplained anaemia are all part of routine gastroenterology practice. Describe what you are feeling. Naming it is the specialist's job.</p>
-        <div style="margin-top:auto;padding-top:1.5rem"><a class="btn btn--light" href="conditions.html">Read the full list</a></div>
-      </li>
-    </ul>
+    <div class="caro__head">
+      <div>
+        <p class="marker">Conditions treated</p>
+        <h2>Five of the conditions seen most often</h2>
+      </div>
+      <div class="caro__nav">
+        <button class="caro__btn" type="button" data-caro="prev" aria-label="Previous conditions" aria-controls="cond-track">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button class="caro__btn" type="button" data-caro="next" aria-label="More conditions" aria-controls="cond-track">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="caro rise">
+      <ul class="caro__track" id="cond-track" tabindex="0" aria-label="Conditions treated">
+        <li class="card">
+          <figure class="card__fig"><img src="assets/img/consult-desk.jpg" alt="Discussing symptoms and treatment in clinic" loading="lazy"></figure>
+          <div class="card__body">
+            <div class="card__k">Stomach &amp; duodenum</div>
+            <h3>Peptic ulcers</h3>
+            <p>Open sores in the lining of the stomach or upper small bowel. Most follow <i>H.&nbsp;pylori</i> infection or long term anti inflammatory tablets, and both causes are treatable.</p>
+            <div class="card__tags"><span>Gastroscopy</span><span>H. pylori test</span><span>Acid control</span></div>
+            <div class="card__ln"></div>
+          </div>
+        </li>
+        <li class="card">
+          <figure class="card__fig"><img src="assets/img/consult-room.jpg" alt="Consultation in the clinic room" loading="lazy"></figure>
+          <div class="card__body">
+            <div class="card__k">Whole bowel</div>
+            <h3>Irritable bowel syndrome</h3>
+            <p>Pain, bloating and a changed bowel habit with no damage visible in the bowel wall. Diagnosed by ruling out the conditions that look similar, then managed for the long term.</p>
+            <div class="card__tags"><span>Careful exclusion</span><span>Diet review</span><span>Ongoing care</span></div>
+            <div class="card__ln"></div>
+          </div>
+        </li>
+        <li class="card">
+          <figure class="card__fig"><img src="assets/img/ward-notes.jpg" alt="Ward review with case notes" loading="lazy"></figure>
+          <div class="card__body">
+            <div class="card__k">Immune inflammation</div>
+            <h3>Inflammatory bowel disease</h3>
+            <p>Crohn's disease and ulcerative colitis inflame and ulcerate the bowel wall. Endoscopy and biopsy confirm it, then treatment keeps the disease quiet for years.</p>
+            <div class="card__tags"><span>Colonoscopy</span><span>Biopsy</span><span>Maintenance</span></div>
+            <div class="card__ln"></div>
+          </div>
+        </li>
+        <li class="card">
+          <figure class="card__fig"><img src="assets/img/procedure-room.jpg" alt="The endoscopy procedure room" loading="lazy"></figure>
+          <div class="card__body">
+            <div class="card__k">Screening matters</div>
+            <h3>Colon cancer</h3>
+            <p>Most colon cancers begin as polyps that cause no symptoms at all. Colonoscopy finds them and removes them in the same session, which is why screening changes outcomes.</p>
+            <div class="card__tags"><span>Screening</span><span>Polyp removal</span><span>Surveillance</span></div>
+            <div class="card__ln"></div>
+          </div>
+        </li>
+        <li class="card">
+          <figure class="card__fig"><img src="assets/img/corridor-notes.jpg" alt="Reviewing results between clinics" loading="lazy"></figure>
+          <div class="card__body">
+            <div class="card__k">Liver</div>
+            <h3>Hepatitis</h3>
+            <p>Inflammation of the liver from virus, alcohol, medicines or fat, often silent for years. Blood tests, imaging and biopsy establish the cause and guide treatment.</p>
+            <div class="card__tags"><span>Viral serology</span><span>Liver imaging</span><span>Antivirals</span></div>
+            <div class="card__ln"></div>
+          </div>
+        </li>
+        <li class="card card--flat" style="background:var(--jade-deep);border-color:var(--jade-deep);color:#E6F0EB">
+          <div class="card__k" style="color:var(--ochre-2)">Not on the list?</div>
+          <h3 style="color:#fff">Bring the symptom, not the diagnosis</h3>
+          <p style="color:rgba(230,240,235,.78)">Reflux, coeliac disease, gallstones, pancreatitis and unexplained anaemia are all routine gastroenterology. Describe what you are feeling. Naming it is the specialist's job.</p>
+          <div style="margin-top:auto;padding-top:1.5rem"><a class="btn btn--light" href="conditions.html">Read the full list</a></div>
+        </li>
+      </ul>
+      <div class="caro__rail" aria-hidden="true"><i></i></div>
+    </div>
   </div>
 </section>
 
@@ -376,11 +391,11 @@
         </ul>
       </div>
     </div>
-    <div class="foot__big" aria-hidden="true">Gastro Center Mombasa</div>
     <div class="foot__note">
       <p>© <span data-year>2026</span> Gastro Center Mombasa. Information on this site is general and does not replace a consultation. Telephone and email are placeholders pending confirmation.</p>
       <p>Design concept: Site One</p>
     </div>
+    <div class="foot__big" aria-hidden="true">Dr. Firoz Alimohamed</div>
   </div>
 </footer>
 
