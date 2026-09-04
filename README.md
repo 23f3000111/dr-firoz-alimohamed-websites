@@ -1,5 +1,7 @@
 # Dr. Firoz Alimohamed — two website concepts
 
+**Live:** https://23f3000111.github.io/dr-firoz-alimohamed-websites/
+
 Two complete, independent website designs for Dr. Firoz Alimohamed, consultant
 gastroenterologist at The Mombasa Hospital. Both are static sites: open
 `index.html` in a browser, or serve the folder (`python -m http.server`).
@@ -16,6 +18,8 @@ site-two/          "The Aperture"          — dark, immersive, instrument-led
   index.html  about.html  conditions.html  appointment.html
   css/style.css  js/main.js  assets/img/
 
+index.html         landing page that links to both concepts
+shared/            preview thumbnails used by the landing page
 _previews/         full-page screenshots of both homepages, desktop + mobile
 ```
 
