@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Gastro Center Mombasa — motion layer
+   Dr Firoz Alimohamed — motion layer
    Everything here degrades to a static, fully readable page without JS.
    ========================================================================== */
 (function () {
@@ -48,7 +48,9 @@
     var y = window.scrollY;
     head.setAttribute('data-stuck', y > 24 ? 'true' : 'false');
     if (nav.getAttribute('data-open') !== 'true') {
-      head.setAttribute('data-hide', (y > lastY && y > 420) ? 'true' : 'false');
+      var hide = y > lastY && y > 420;
+      head.setAttribute('data-hide', hide ? 'true' : 'false');
+      if (hide) head.querySelectorAll('.nav__item[data-open="true"] .nav__caret').forEach(function (b) { b.click(); });
     }
     lastY = y;
   }
@@ -71,6 +73,36 @@
     });
   }
 
+  /* ---------------------------------------------------------- dropdowns */
+  var drops = [].slice.call(document.querySelectorAll('.nav__item'));
+  function closeDrops(except) {
+    drops.forEach(function (d) {
+      if (d === except) return;
+      d.setAttribute('data-open', 'false');
+      d.querySelector('.nav__caret').setAttribute('aria-expanded', 'false');
+    });
+  }
+  drops.forEach(function (d) {
+    var btn = d.querySelector('.nav__caret');
+    btn.addEventListener('click', function () {
+      var open = d.getAttribute('data-open') === 'true';
+      closeDrops(d);
+      d.setAttribute('data-open', open ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    d.addEventListener('focusout', function (e) {
+      // in the phone menu, closing here would shift the layout under the next tap
+      if (innerWidth > 1240 && e.relatedTarget && !d.contains(e.relatedTarget)) closeDrops();
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav__item')) closeDrops();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = document.querySelector('.nav__item[data-open="true"]');
+    if (open) { open.querySelector('.nav__caret').focus(); closeDrops(); }
+  });
 
   /* --------------------------------------------- progress bar + stagger */
   var prog = document.createElement('div');
@@ -85,7 +117,7 @@
 
   // children of a grid reveal one after another instead of all at once
   ['.gal', '.strip', '.trip', '.cgrid', '.procs', '.steps', '.stats', '.stat',
-   '.path', '.prep', '.cond-list', '.pin__track'].forEach(function (sel) {
+   '.path', '.prep', '.cond-list'].forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (host) {
       [].slice.call(host.children).forEach(function (c, i) {
         c.style.setProperty('--d', (i * 0.075).toFixed(3) + 's');
@@ -168,26 +200,6 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('[data-count]').forEach(function (el) { cio.observe(el); });
 
-  /* --------------------------------------------- pinned horizontal track */
-  var pin = document.querySelector('.pin');
-  var track = document.querySelector('.pin__track');
-  var prog = document.querySelector('.pin__prog i');
-  function sizePin() {
-    if (!pin || !track) return;
-    if (innerWidth < 981 || reduce) { pin.style.height = ''; track.style.transform = ''; return; }
-    var dist = track.scrollWidth - innerWidth + parseFloat(getComputedStyle(document.documentElement).fontSize) * 2;
-    pin.style.height = (innerHeight + Math.max(dist, 0) * 0.95) + 'px';
-  }
-  function movePin() {
-    if (!pin || !track || innerWidth < 981 || reduce) return;
-    var r = pin.getBoundingClientRect();
-    var total = pin.offsetHeight - innerHeight;
-    var p = clamp(-r.top / total, 0, 1);
-    var dist = track.scrollWidth - innerWidth + 40;
-    track.style.transform = 'translate3d(' + (-p * Math.max(dist, 0)) + 'px,0,0)';
-    if (prog) prog.style.width = (p * 100) + '%';
-  }
-
   /* ------------------------------------------------ the continuous line */
   var tracts = document.querySelectorAll('.tract');
   tracts.forEach(function (svg) {
@@ -197,9 +209,17 @@
     ink.style.strokeDasharray = len;
     ink.style.strokeDashoffset = reduce ? 0 : len;
     svg.__len = len; svg.__ink = ink;
-    svg.__bead = svg.querySelector('.tract__bead');
+    svg.__bead = svg.querySelector('.tract__bead:not(.tract__bead--off)');
     svg.__nodes = [].slice.call(svg.querySelectorAll('[data-at]'));
     if (reduce) svg.__nodes.forEach(function (n) { n.classList.add('on'); });
+    // the liver leaves the main line as an off shoot, drawn once the ink reaches the junction
+    var off = svg.querySelector('.tract__off-ink');
+    if (off) {
+      svg.__off = off; svg.__offLen = off.getTotalLength();
+      off.style.strokeDasharray = svg.__offLen;
+      off.style.strokeDashoffset = reduce ? 0 : svg.__offLen;
+      svg.__offBead = svg.querySelector('.tract__bead--off');
+    }
   });
   function paintTract() {
     if (reduce) return;
@@ -216,6 +236,15 @@
         var pt = svg.__ink.getPointAtLength(svg.__len * p);
         svg.__bead.setAttribute('cx', pt.x); svg.__bead.setAttribute('cy', pt.y);
         svg.__bead.style.opacity = (p > 0.01 && p < 0.995) ? 1 : 0;
+      }
+      if (svg.__off) {
+        var from = parseFloat(svg.__off.getAttribute('data-from'));
+        var to = parseFloat(svg.__off.getAttribute('data-to'));
+        var q = clamp((p - from) / (to - from), 0, 1);
+        svg.__off.style.strokeDashoffset = svg.__offLen * (1 - q);
+        var qt = svg.__off.getPointAtLength(svg.__offLen * q);
+        svg.__offBead.setAttribute('cx', qt.x); svg.__offBead.setAttribute('cy', qt.y);
+        svg.__offBead.style.opacity = (q > 0.01 && q < 0.995) ? 1 : 0;
       }
     });
   }
@@ -259,57 +288,6 @@
     heroSec.addEventListener('mouseleave', function () { heroFig.style.transform = ''; });
   }
 
-  /* ----------------------------------------------------------- carousel */
-  document.querySelectorAll('.caro').forEach(function (caro) {
-    var track = caro.querySelector('.caro__track');
-    if (!track) return;
-    // the arrows live in the section head, alongside the carousel, not inside it
-    var scope = caro.closest('.wrap') || document;
-    var owns = track.id ? '[aria-controls="' + track.id + '"]' : '';
-    var prev = scope.querySelector('[data-caro="prev"]' + owns);
-    var next = scope.querySelector('[data-caro="next"]' + owns);
-    var bar = caro.querySelector('.caro__rail i');
-    var behavior = reduce ? 'auto' : 'smooth';
-
-    function step() {
-      var first = track.firstElementChild;
-      if (!first) return track.clientWidth;
-      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      return first.getBoundingClientRect().width + gap;
-    }
-    function paint() {
-      var max = track.scrollWidth - track.clientWidth;
-      var frac = track.scrollWidth ? track.clientWidth / track.scrollWidth : 1;
-      var p = max > 1 ? clamp(track.scrollLeft / max, 0, 1) : 0;
-      if (bar) {
-        bar.style.width = (Math.min(frac, 1) * 100) + '%';
-        bar.style.transform = 'translateX(' + (p * (100 / Math.min(frac, 1) - 100)) + '%)';
-      }
-      if (prev) prev.disabled = track.scrollLeft <= 2;
-      if (next) next.disabled = track.scrollLeft >= max - 2;
-    }
-    // aim at an absolute position so a burst of clicks still lands a card at a time
-    var target = null, settle;
-    function go(dir) {
-      var s = step(), max = track.scrollWidth - track.clientWidth;
-      var from = target === null ? track.scrollLeft : target;
-      target = clamp(Math.round((from + dir * s) / s) * s, 0, max);
-      track.scrollTo({ left: target, behavior: behavior });
-      clearTimeout(settle);
-      settle = setTimeout(function () { target = null; }, 700);
-    }
-    if (prev) prev.addEventListener('click', function () { go(-1); });
-    if (next) next.addEventListener('click', function () { go(1); });
-
-    var t = false;
-    track.addEventListener('scroll', function () {
-      if (!t) { t = true; requestAnimationFrame(function () { t = false; paint(); }); }
-    }, { passive: true });
-    addEventListener('resize', paint);
-    addEventListener('load', paint);
-    paint();
-  });
-
   /* ---------------------------------------------------------- accordion */
   document.querySelectorAll('.acc').forEach(function (acc) {
     acc.querySelectorAll('.acc__btn').forEach(function (btn) {
@@ -347,11 +325,11 @@
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   var ticking = false;
-  function frame() { paintSays(); movePin(); paintTract(); paintPx(); paintProg(); ticking = false; }
+  function frame() { paintSays(); paintTract(); paintPx(); paintProg(); ticking = false; }
   addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(frame); }
   }, { passive: true });
-  addEventListener('resize', function () { sizePin(); frame(); });
-  window.addEventListener('load', function () { sizePin(); frame(); });
-  sizePin(); frame();
+  addEventListener('resize', frame);
+  window.addEventListener('load', frame);
+  frame();
 })();

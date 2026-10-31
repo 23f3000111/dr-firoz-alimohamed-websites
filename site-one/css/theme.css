@@ -1,0 +1,29 @@
+/* Colour only. Layout, type and motion live in style.css, so a colourway is
+   this one file. site-one/ and site-one-blue/ differ only here. */
+:root{
+  --paper:#F1F4F0;
+  --paper-rgb:241,244,240;
+  --paper-2:#E6ECE6;
+  --shell:#D8E2DA;
+  --ink:#0E211A;
+  --ink-rgb:14,33,26;
+  --ink-2:#37493F;
+  --ink-3:#5C6E65;
+  --brand:#0E6B56;
+  --brand-rgb:14,107,86;
+  --brand-2:#12866C;
+  --brand-2-rgb:18,134,108;
+  --brand-deep:#062B23;
+  --brand-deep-rgb:6,43,35;
+  --brand-tint:#CBDFD6;
+  --warm:#C0761E;
+  --warm-rgb:192,118,30;
+  --warm-2:#E2A44E;
+  --warm-ink:#935710;
+  --warm-tint:#F1E1C6;
+  --on-deep:#E6F0EB;
+  --on-deep-rgb:230,240,235;
+  --foot:#BDCCC5;
+  --foot-rgb:189,204,197;
+  --white:#FFFFFF;
+}

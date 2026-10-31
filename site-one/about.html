@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Dr. Firoz Alimohamed | Gastro Center Mombasa</title>
+<title>About Dr. Firoz Alimohamed | Consultant Gastroenterologist, Mombasa</title>
 <meta name="description" content="Education, fellowship training, clinical experience and professional memberships of Dr. Firoz Alimohamed, consultant gastroenterologist in Mombasa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='9' fill='%230E6B56'/><path d='M27 13c-4-4-13-3-13 5s9 10 13 6' fill='none' stroke='%23E2A44E' stroke-width='3' stroke-linecap='round'/></svg>">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
 <body>
 
@@ -17,18 +18,52 @@
 
 <header class="head">
   <div class="wrap head__in">
-    <a class="brand" href="index.html" aria-label="Gastro Center Mombasa, home">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M31 12.5C27.5 7.5 9 7 9 20s18.5 12.5 22 7.5"/></svg>
-      <span><b>Gastro Center</b><i>Mombasa</i></span>
+    <a class="brand" href="index.html" aria-label="Dr Firoz Alimohamed, home">
+      <img src="assets/img/logo.png" alt="" width="282" height="300">
+      <span><b>Dr Firoz Alimohamed</b></span>
     </a>
-    <nav class="nav" id="nav">
-      <a href="index.html"><span>Home</span><span>Home</span></a>
-      <a href="about.html" aria-current="page"><span>About Dr. Firoz</span><span>About Dr. Firoz</span></a>
-      <a href="conditions.html"><span>Conditions &amp; care</span><span>Conditions &amp; care</span></a>
-      <a href="appointment.html"><span>Appointment</span><span>Appointment</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a class="nav__a" href="index.html"><span>Home</span><span>Home</span></a>
+      <a class="nav__a" href="about.html" aria-current="page"><span>About Dr. Firoz</span><span>About Dr. Firoz</span></a>
+      <div class="nav__item">
+        <a class="nav__a" href="services.html"><span>Services</span><span>Services</span></a>
+        <button class="nav__caret" type="button" aria-expanded="false" aria-controls="drop-services" aria-label="Show services offered at our clinics"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="drop" id="drop-services">
+          <div class="drop__in">
+            <p class="drop__k">Services offered at our clinics</p>
+            <ul>
+              <li><a href="service-consultation.html">Consultation</a></li>
+              <li><a href="service-endoscopy-colonoscopy.html">Diagnostic endoscopy and colonoscopy</a></li>
+              <li><a href="service-capsule-endoscopy.html">Capsule endoscopy</a></li>
+              <li><a href="service-fibroscan.html">Fibroscan</a></li>
+              <li><a href="service-point-of-care-ultrasound.html">Point of care ultrasound</a></li>
+            </ul>
+            <a class="drop__all" href="services.html">All services</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__a" href="conditions.html"><span>Conditions &amp; care</span><span>Conditions &amp; care</span></a>
+        <button class="nav__caret" type="button" aria-expanded="false" aria-controls="drop-conditions" aria-label="Show common conditions"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="drop" id="drop-conditions">
+          <div class="drop__in">
+            <p class="drop__k">Common conditions</p>
+            <ul>
+              <li><a href="condition-peptic-ulcers.html">Peptic ulcers</a></li>
+              <li><a href="condition-irritable-bowel-syndrome.html">Irritable bowel syndrome</a></li>
+              <li><a href="condition-inflammatory-bowel-disease.html">Inflammatory bowel disease</a></li>
+              <li><a href="condition-colon-cancer.html">Colon cancer</a></li>
+              <li><a href="condition-hepatitis-liver-disease.html">Hepatitis and liver disease</a></li>
+            </ul>
+            <a class="drop__all" href="conditions.html">All conditions and care</a>
+          </div>
+        </div>
+      </div>
+      <a class="nav__a" href="consultation.html"><span>Consultation</span><span>Consultation</span></a>
+      <a class="nav__a" href="contact.html"><span>Contact us</span><span>Contact us</span></a>
     </nav>
     <div class="head__cta">
-      <a class="btn" href="appointment.html" data-mag>Book a consultation<i class="dot"></i></a>
+      <a class="btn" href="consultation.html" data-mag>Book a consultation<i class="dot"></i></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i><i></i><i></i></button>
     </div>
   </div>
@@ -49,7 +84,7 @@
     <ul class="phead__facts">
       <li><b>2005</b><span>Treating gastrointestinal conditions since</span></li>
       <li><b>3</b><span>Universities across three continents</span></li>
-      <li><b>Suite 5</b><span>The Mombasa Hospital, Monday to Friday</span></li>
+      <li><b>Suite 5</b><span>The Mombasa Hospital, Monday to Saturday</span></li>
       <li><b>ECSACOP</b><span>Honorary lecturer, postgraduate programme</span></li>
     </ul>
   </div>
@@ -143,14 +178,14 @@
 </section>
 
 <section class="bay-s" style="background:var(--paper-2)">
-  <div class="wrap" style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.6rem,5vw,4.5rem);align-items:center">
+  <div class="wrap split" style="--cols:minmax(0,.9fr) minmax(0,1.1fr)">
     <div class="frame frame--tall rise"><img src="assets/img/life-park.jpg" alt="Dr. Firoz Alimohamed outdoors" data-px="8"></div>
     <div>
       <p class="marker">Away from the clinic</p>
       <h2 style="font-size:var(--t-3);max-width:16ch">The doctor who has time for the question after the question</h2>
       <p class="muted" style="margin-top:1.2rem">Gastroenterology is a specialty of long relationships. Inflammatory bowel disease, chronic liver disease and surveillance after polyps are followed for years, not weeks, so the way a consultation feels matters as much as what is written in it.</p>
       <p class="muted">Patients are told what was found, in words they can repeat to their family, and what happens next.</p>
-      <div style="margin-top:2rem"><a class="btn" href="appointment.html" data-mag>Book a consultation<i class="dot"></i></a></div>
+      <div style="margin-top:2rem"><a class="btn" href="consultation.html" data-mag>Book a consultation<i class="dot"></i></a></div>
     </div>
   </div>
 </section>
@@ -165,7 +200,7 @@
       <p style="max-width:44ch;margin-top:1.1rem">Send the history, the medicines and any results you already have. Urgent inpatient referrals are accepted through the hospital.</p>
     </div>
     <div class="cta__acts">
-      <a class="btn btn--light" href="appointment.html" data-mag>Send a referral<i class="dot"></i></a>
+      <a class="btn btn--light" href="consultation.html" data-mag>Send a referral<i class="dot"></i></a>
       <a class="btn btn--ghost" href="conditions.html">Conditions &amp; care</a>
     </div>
   </div>
@@ -178,27 +213,40 @@
     <div class="foot__grid">
       <div>
         <a class="brand" href="index.html">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M31 12.5C27.5 7.5 9 7 9 20s18.5 12.5 22 7.5"/></svg>
-          <span><b>Gastro Center</b><i>Mombasa</i></span>
+          <img src="assets/img/logo.png" alt="" width="282" height="300">
+          <span><b>Dr Firoz Alimohamed</b></span>
         </a>
-        <p style="margin-top:1.2rem;font-size:.93rem;max-width:34ch;color:rgba(189,204,197,.8)">Consultant gastroenterology and endoscopy for adults, at The Mombasa Hospital and across the city.</p>
+        <p class="foot__about">Consultant gastroenterology and endoscopy for adults, at The Mombasa Hospital and across the city.</p>
       </div>
       <div>
         <h4>Pages</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Dr. Firoz</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="conditions.html">Conditions &amp; care</a></li>
-          <li><a href="appointment.html">Appointment</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
       </div>
       <div>
-        <h4>Care</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="conditions.html">Gastroscopy</a></li>
-          <li><a href="conditions.html">Colonoscopy</a></li>
-          <li><a href="conditions.html">Liver disease</a></li>
-          <li><a href="conditions.html">Bowel cancer screening</a></li>
+          <li><a href="service-consultation.html">Consultation</a></li>
+          <li><a href="service-endoscopy-colonoscopy.html">Diagnostic endoscopy and colonoscopy</a></li>
+          <li><a href="service-capsule-endoscopy.html">Capsule endoscopy</a></li>
+          <li><a href="service-fibroscan.html">Fibroscan</a></li>
+          <li><a href="service-point-of-care-ultrasound.html">Point of care ultrasound</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Common conditions</h4>
+        <ul>
+          <li><a href="condition-peptic-ulcers.html">Peptic ulcers</a></li>
+          <li><a href="condition-irritable-bowel-syndrome.html">Irritable bowel syndrome</a></li>
+          <li><a href="condition-inflammatory-bowel-disease.html">Inflammatory bowel disease</a></li>
+          <li><a href="condition-colon-cancer.html">Colon cancer</a></li>
+          <li><a href="condition-hepatitis-liver-disease.html">Hepatitis and liver disease</a></li>
         </ul>
       </div>
       <div>
@@ -207,12 +255,12 @@
           <li>Suite 5, The Mombasa Hospital</li>
           <li>Mombasa, Kenya</li>
           <li><a href="tel:+254410000000">+254 41 000 0000</a></li>
-          <li><a href="mailto:appointments@gastrocentermombasa.com">appointments@gastrocentermombasa.com</a></li>
+          <li><a href="mailto:appointments@gastrocentermombasa.com">appointments@<wbr>gastrocentermombasa.com</a></li>
         </ul>
       </div>
     </div>
     <div class="foot__note">
-      <p>© <span data-year>2026</span> Gastro Center Mombasa. Information on this site is general and does not replace a consultation. Telephone and email are placeholders pending confirmation.</p>
+      <p>© <span data-year>2026</span> Dr Firoz Alimohamed. Information on this site is general and does not replace a consultation. Telephone and email are placeholders pending confirmation.</p>
       <p>Design concept: Site One</p>
     </div>
     <div class="foot__big" aria-hidden="true">Dr. Firoz Alimohamed</div>
