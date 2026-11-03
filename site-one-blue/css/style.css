@@ -401,6 +401,13 @@ button{font:inherit;color:inherit}
 .cta .btn--ghost{--fg:#fff;--bd:rgba(255,255,255,.55)}
 .cta .btn--ghost::before{background:#fff}
 .cta .btn--ghost:hover{--fg:var(--brand-deep)}
+.cta--long h2{font-size:var(--t-3);max-width:20ch}
+.cta__text{max-width:44ch;margin-top:1.1rem}
+.cta__text p{margin:0}
+.cta__text p + p{margin-top:.75rem}
+.cta .cta__tag{color:#fff;font-weight:600}
+.cta__text .cta__where{margin-top:1.2rem;font-size:.95rem}
+.cta__where b{display:block;font-size:.8rem;font-weight:600;color:var(--warm-2);margin-bottom:.1rem}
 .cta__ring{position:absolute;right:-6rem;top:50%;translate:0 -50%;width:40rem;height:40rem;z-index:1;
   animation:spin 60s linear infinite}
 .cta__ring circle{fill:none;stroke:rgba(255,255,255,.1);stroke-width:1}
@@ -597,9 +604,10 @@ button{font:inherit;color:inherit}
 .prep{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,3vw,2.4rem)}
 .prep > div{background:var(--white);border:var(--rail);border-radius:14px;padding:clamp(1.4rem,2.6vw,2rem)}
 .prep h3{font-size:1.3rem;margin-bottom:1rem}
-.prep ol{counter-reset:p}
+.prep ol,.nums{counter-reset:p}
 .prep ol li{position:relative;padding-left:2.2rem;margin-bottom:.8rem;font-size:.95rem;color:var(--ink-2)}
-.prep ol li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.05em;
+.nums li{position:relative;padding-left:2.2rem;margin-bottom:.7rem}
+.prep ol li::before,.nums li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.05em;
   width:1.5rem;height:1.5rem;border-radius:50%;background:var(--brand);color:#fff;
   display:grid;place-items:center;font-size:.78rem;font-weight:700;font-family:var(--f-b)}
 @media (max-width:760px){.prep{grid-template-columns:1fr}}
@@ -630,8 +638,12 @@ button{font:inherit;color:inherit}
 .phead h1.free{max-width:none}
 .bio__side{position:sticky;top:6.5rem}
 .bio--read h2{font-size:var(--t-2);margin-bottom:.7rem}
-.bio--read p:last-child,.bio--read .ticks li:last-child{margin-bottom:0}
-.bio--read .ticks + p{margin-top:.9rem}
+.bio--read p:last-child,.bio--read li:last-child{margin-bottom:0}
+.bio--read .ticks + p,.bio--read .nums + p{margin-top:.9rem}
+.bio--read h3{font-size:var(--t-1);margin:1.6rem 0 .55rem;letter-spacing:-.012em}
+.bio--read .intro{margin-bottom:clamp(1.8rem,3vw,2.5rem)}
+.disclaimer{margin:clamp(2rem,3.4vw,2.8rem) 0 0;padding-top:1.1rem;border-top:var(--rail);
+  font-size:.86rem;line-height:1.55;color:var(--ink-3);max-width:none}
 .bio__side .btn{width:100%;margin-top:1rem}
 @media (max-width:880px){.bio__side{position:static}.bio__side .frame{max-width:30rem}}
 .brochure{display:flex;align-items:center;gap:.9rem;margin-top:1rem;padding:.95rem 1.15rem;

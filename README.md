@@ -106,16 +106,29 @@ on the ECSACOP postgraduate programme, the three society memberships, the five
 conditions, and the Suite 5 location. Consulting hours are from the amendments
 document: Monday to Friday, 9:00am to 5:00pm, and Saturday, 9:00am to 12:30pm.
 
-**Needs Dr. Firoz's approval before going live:** everything else, and above all
-the ten new service and condition pages. They are standard, non controversial
-patient information, written for this site rather than supplied. Specific details
-to check include the preparation times for capsule endoscopy, Fibroscan and
-ultrasound, and the conditions each service is listed against.
+**Service pages.** The five service pages use the clinic's own copy, supplied as
+Word documents on 3 November 2026: endoscopy and colonoscopy, capsule endoscopy,
+oesophageal pH and impedance studies, FibroScan, and point of care ultrasound for
+the liver. The wording is the client's, edited only for house style: hyphens and
+dashes rewritten (non-invasive → noninvasive, point-of-care → point of care,
+5–15 minutes → 5 to 15 minutes) and "Mombasa Hospital" written as The Mombasa
+Hospital. The endoscopy document had three sections pasted after its closing
+call to action; they sit back under the parts they belong to. Each page's
+closing band uses the document's own call to action. Consultation is no longer
+a service page: it is the booking page, under Consultation in the menu.
+
+**Needs Dr. Firoz's approval before going live:** the five condition pages. They
+are standard, non controversial patient information, written for this site
+rather than supplied.
+
+**Telephone.** 0719 669 425 and 0733 485 209, from the client's FibroScan
+document, replace the old placeholder everywhere. The same document gives the
+location as the Consultants Clinic, Suite 5, which the footer and contact page
+now use.
 
 **Placeholders to replace:**
 
-- Telephone (`+254 41 000 0000`) and email
-  (`appointments@gastrocentermombasa.com`). Both are flagged in each footer.
+- Email (`appointments@gastrocentermombasa.com`), flagged in each footer.
 - The hero photograph, `assets/img/portrait-office.jpg`. The client asked for the
   picture to change without supplying a new one, so this is the best of the
   existing set.
